@@ -6,30 +6,34 @@
   onMount(() => {
     import('p5').then(module => {
       const p5 = module.default;
-
-      var emojis = ['🎮', '💗', '🦷', '🏓', '🧿']; // Add more emojis as you need
-      var n = 0;
   
       sketch = new p5(p => {
   
         p.setup = () => {
-          const size = min(p.widthWidth, p.windowHeight);
+  const size = p.min(p.windowWidth, p.windowHeight);
           p.createCanvas(size, size);
-          p.colorMode(RGB, 1);
-          p.noStroke;
+          p.colorMode(p.RGB, 1);
+          p.noStroke();
         };
+
+const radius = Math.sqrt(0.5);
+const PHI = (1 + Math.sqrt(5)) / 2;
 
         p.draw = () => {
           p.scale(p.width, p.height);
-          p.background(51);
+          p.background(0);
           p.fill(1);
           
-          const a= 0;
-          const radius = 0.1;
-          const x = cos(a * p.TWO_PI) * radius;
-          const y = sin(a * p.TWO_PI) * radius;
+          const count = 200;
+          for (let i = 0; i < count; i++) {
+            const f = i / count;
+          const a = i / PHI;
+          const dist = f * radius;
+          const x = 0.5 + p.cos(a * p.TWO_PI) * dist;
+          const y = 0.5 + p.sin(a * p.TWO_PI) * dist;
           const r = 0.01;
-          p.circle(x, y, z);
+          p.circle(x, y, r);
+          }
         };
 
         p.windowResized = () => {
@@ -56,21 +60,17 @@
   });
     </script>
     
- 
+
     {@debug chad}
     <div id="container"></div>
-    
-    <div id="suck"></div>
-    
+
     
 <style>
 #container {
-  background-color: "#999"
+  width: "100%";
+  height: "100%";
 }
 
-#suck {
-  width: "200px";
-  height: "200px";
-  background-color: "red";
-}
+
 </style>
+

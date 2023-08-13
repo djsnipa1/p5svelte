@@ -7,4 +7,4 @@ import Psylo from '../components/Psylo.svelte'
 
 <Psylo />
 <P5 />
-<P5new />
+<!-- <P5new /> -->
