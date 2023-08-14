@@ -15,23 +15,41 @@
           p.colorMode(p.RGB, 1);
           p.noStroke();
         };
+        
+function cosn(v) {
+  return p.cos(v * p.TWO_PI) * 0.5 + 0.5;
+}
 
-const radius = Math.sqrt(0.5);
+function invCosn(v) {
+  return 1 - cosn(v);
+}
+
+const dotSize = 0.05;
+const radius = Math.sqrt(0.5) + dotSize;
 const PHI = (1 + Math.sqrt(5)) / 2;
 
+
+let t;
+const frames = 1000;
+
         p.draw = () => {
+          t = p.fract(p.frameCount / frames);
+          // t = p.mouseX / p.width;
+          
           p.scale(p.width, p.height);
           p.background(0);
           p.fill(1);
           
-          const count = 200;
+          const count = 1000 * invCosn(t);
           for (let i = 0; i < count; i++) {
             const f = i / count;
           const a = i / PHI;
           const dist = f * radius;
           const x = 0.5 + p.cos(a * p.TWO_PI) * dist;
           const y = 0.5 + p.sin(a * p.TWO_PI) * dist;
-          const r = 0.01;
+          
+          const sig = cosn(f - t * 6);
+          const r = sig * f * dotSize;
           p.circle(x, y, r);
           }
         };
