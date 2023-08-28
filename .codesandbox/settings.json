@@ -1,2 +1,1 @@
-{ "vim.insertModeKeyBindings": [ { "before": [ "j", "k" ], "after": [ "<esc>" ] } ]
-}
+{ "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<esc>"] }] }

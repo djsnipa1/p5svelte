@@ -9,6 +9,13 @@
 				const p5 = module.default
 
 				sketch = new p5((p) => {
+					let fontRegular, fontTwo
+
+					// function p.preload() {
+					p.preload = () => {
+						fontRegular = p.loadFont('/fonts/super_donuts.ttf')
+						console.log(`fontRegular = ${fontRegular}`)
+					}
 					p.setup = () => {
 						const size = p.min(p.windowWidth, p.windowHeight)
 						p.createCanvas(size, size)
@@ -40,6 +47,16 @@
 						p.background(0)
 						p.fill(1)
 
+						function textMessage() {
+							// p.background(70);
+							p.fill(255)
+							p.strokeWeight(0)
+							p.textSize(40)
+							p.textFont(fontRegular)
+							p.text('Font Style Normal', 10, 30)
+							p.rect(20, 220, 150, 150)
+						}
+
 						const count = 2000 * invCosn(t)
 						for (let i = 0; i < count; i++) {
 							const f = i / count
@@ -60,6 +77,8 @@
 
 							p.circle(x, y, r)
 						}
+
+						textMessage()
 					}
 
 					p.windowResized = () => {
@@ -80,7 +99,7 @@
 	})
 </script>
 
-{@debug chad}
+{@debug sketch}
 <div id="container" />
 
 <style>
