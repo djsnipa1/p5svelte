@@ -11,8 +11,8 @@
 				sketch = new p5((p) => {
 					p.setup = () => {
 						const size = p.min(p.windowWidth, p.windowHeight)
-						p.createCanvas(size, size)
-						// p.createCanvas(p.windowWidth, p.windowHeight);
+						// p.createCanvas(size, size)
+						p.createCanvas(p.windowWidth, p.windowHeight)
 						p.colorMode(p.HSL, 1)
 						p.noStroke()
 					}

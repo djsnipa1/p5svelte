@@ -16,16 +16,19 @@
 <!-- <P5 /> -->
 
 <!-- <P5new /> -->
+
 <!-- <Pattern /> -->
 
-<!-- <Happy /> -->
+<Happy />
+
 <!-- <HapBir /> -->
-<Test />
+
+<!-- <Test /> -->
 
 <!-- <div style="display: flex; align-items: center; justify-content: center;" /> -->
 
 <!-- First element -->
-<!-- <Psylo /> -->
+<Psylo />
 
 <!-- Second element -->
 

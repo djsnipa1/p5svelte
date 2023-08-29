@@ -99,7 +99,7 @@
 	})
 </script>
 
-{@debug sketch}
+<!-- {@debug sketch} -->
 <div id="container" />
 
 <style>

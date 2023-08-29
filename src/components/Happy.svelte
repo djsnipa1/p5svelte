@@ -3,12 +3,12 @@
 <style>
 	@font-face {
 		font-family: 'Super Donuts';
-		src: url('$lib/fonts/super_donuts.ttf');
+		src: url('/fonts/super_donuts.ttf');
 		/* src: local('Super Donuts'), url('$lib/fonts/super_donuts.ttf') format('ttf'); */
 	}
 	@font-face {
 		font-family: 'Glakome';
-		src: url('$lib/fonts/glakome.otf');
+		src: url('/fonts/glakome.otf');
 	}
 
 	#happy {
